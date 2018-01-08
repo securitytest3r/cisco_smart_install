@@ -14,6 +14,7 @@ conn_with_host.settimeout(5)
 conn_with_host.connect((target_ip, 4786))
 print "[*] Testing with mode set to 1"
 print "[*] Sending data to target: %s" % sTcp
+data = sTcp
 conn_with_host.send(data)
 resp = '0' * 7 + '4' + '0' * 8 + '0' * 7 + '3' + '0' * 7 + '8' + '0' * 7 + '1' + '0' * 8
 while True:
